@@ -19,8 +19,8 @@ class Stack:
 	def push(self, data): 
 
 		Newnode = Node(data)
-		Newnode.next = self.head
-		self.head = Newnode
+		Newnode.next = self.head  # Establishing reference of this node to the current head
+		self.head = Newnode # Moving that pointer back from original node back to this node
 
 
 	def pop(self): 
