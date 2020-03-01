@@ -1,5 +1,4 @@
 def mergeSort(arr):
-
     if len(arr) > 1:
         mid = len(arr)//2
         leftList = arr[:mid]
@@ -9,7 +8,7 @@ def mergeSort(arr):
         i = 0
         j = 0
         k = 0
-
+        # for reference refer https://www.youtube.com/watch?v=_trEkEX_-2Q
         while i < len(leftList) and j < len(rightList):
 
             if leftList[i] < rightList[j]:
@@ -29,6 +28,7 @@ def mergeSort(arr):
             arr[k] = rightList[j]
             j += 1
             k += 1
+    return arr
 
 
 arr = [12, 3, 4, 5, 7, 8]

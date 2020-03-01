@@ -4,6 +4,8 @@ def quicksort(arr, lowindex, highindex):
         quicksort(arr, lowindex, p-1)
         quicksort(arr, p+1, highindex)
 
+    return arr
+
 
 def partition(arr, lowindex, highindex):
     i = lowindex-1
