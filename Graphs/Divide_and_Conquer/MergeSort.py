@@ -6,6 +6,9 @@ def mergeSort(arr):
         rightList = arr[mid:]
         mergeSort(leftList)
         mergeSort(rightList)
+        i = 0
+        j = 0
+        k = 0
 
         while i < len(leftList) and j < len(rightList):
 
@@ -26,3 +29,7 @@ def mergeSort(arr):
             arr[k] = rightList[j]
             j += 1
             k += 1
+
+
+arr = [12, 3, 4, 5, 7, 8]
+print(mergeSort(arr))
