@@ -7,6 +7,7 @@ def mergeSort(arr):
         mergeSort(rightList)
         i = 0
         j = 0
+
         k = 0
         # for reference refer https://www.youtube.com/watch?v=_trEkEX_-2Q
         while i < len(leftList) and j < len(rightList):
