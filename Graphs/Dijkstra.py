@@ -21,7 +21,7 @@ def dijkstra_fun(graph, start, goal):
                 min_node = node
             elif shortest_path[node] < shortest_path[min_node]:
                 min_node = node
-
+        print(min_node)
         for childNode, weight in graph[min_node].items():
             if weight + shortest_path[min_node] < shortest_path[childNode]:
                 shortest_path[childNode] = weight + shortest_path[min_node]
