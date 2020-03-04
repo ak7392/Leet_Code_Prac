@@ -16,8 +16,13 @@ def common_elements(arr1, arr2, arr3):
     # for key in dic.keys():
     #     result.append(key)
     # print(result)
+    #------------- Second Solution ---------------------------#
+    # print(list(set(arr1) & set(arr2) & set(arr3)))
 
-    print(list(set(arr1) & set(arr2) & set(arr3)))
+    #--------------Third Solution ----------------------------#
+    new_list = [i for i in arr1 if i in arr2]
+    new_list = [i for i in arr2 if i in arr3]
+    print(new_list)
 
 
 arr1 = [1, 2, 2, 3, 4, 8]
