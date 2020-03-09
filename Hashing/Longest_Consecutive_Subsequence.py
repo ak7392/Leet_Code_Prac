@@ -30,5 +30,5 @@ def longest_consecutive_Sub(arr):
     return max_temp
 
 
-arr = arr = [1, 2, 3, 44, 6, 7]
+arr = [1, 2, 3, 44, 6, 7]
 print(longest_consecutive_Sub(arr))
