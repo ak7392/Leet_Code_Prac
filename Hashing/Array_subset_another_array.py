@@ -13,11 +13,13 @@ def Array_Subset_of_another_array(arr1, arr2):
             dic[i] = 1
         else:
             continue
-
-    for key in dic.keys():
-        if key in arr1 and arr2:
-            arr1.remove(key)
-            arr2.remove(key)
+    try:
+        for key in dic.keys():
+            if key in arr1 and arr2:
+                arr1.remove(key)
+                arr2.remove(key)
+    except:
+        return False
 
     if len(arr1) == 0 or len(arr2) == 0:
         return True
@@ -26,6 +28,6 @@ def Array_Subset_of_another_array(arr1, arr2):
 
 
 arr1 = [1, 2, 8, 6, 9]
-arr2 = [1, 2, 3, 7, 8, 10, 12, 6, 4, 9]
+arr2 = [1, 2, 3, 7, 8, 10, 12, 6, 4]
 
 print(Array_Subset_of_another_array(arr1, arr2))
