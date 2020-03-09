@@ -1,4 +1,8 @@
 def Longest_consecutive_substring_sets(arr):
+    # for each num I will check whether num-1 exists
+    # if yes, then I ignore this num
+    # Otherwise if num-1 doesn't exist, then I will go till I can find num+1
+    # so in a way I am only checking each number max once and once in set.
 
     nums = set(arr)
     mx = 0
