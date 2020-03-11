@@ -30,13 +30,16 @@ def findSubArrays(arr, n):
         # If sum already exists in the map
         # there exists at-least one subarray
         # ending at index i with 0 sum
+
         if sum1 in hashMap:
 
             # map[sum] stores starting index
             # of all subarrays
             al = hashMap.get(sum1)
+            print(al)
             for it in range(len(al)):
                 out.append((al[it] + 1, i))
+                # print(out)
         al.append(i)
         hashMap[sum1] = al
     return out
@@ -53,14 +56,13 @@ def printOutput(output):
 
 # Driver Code
 if __name__ == '__main__':
-    arr = [6, 3, -1, -3, 4, -2,
-           2, 4, 6, -12, -7]
+    arr = [6, 3, -3]
     n = len(arr)
-    out = findSubArrays(arr, n)
+    print(findSubArrays(arr, n))
 
     # if we did not find any subarray with 0 sum,
     # then subarray does not exists
-    if (len(out) == 0):
-        print("No subarray exists")
-    else:
-        printOutput(out)
+    # if (len(out) == 0):
+    #     print("No subarray exists")
+    # else:
+    #     printOutput(out)
