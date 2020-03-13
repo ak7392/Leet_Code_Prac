@@ -5,10 +5,10 @@ class Node:
         self.left = None
 
 
-class Solution:
+class Solution(object):
 
-    def is_Binary_Tree_satisfied(self, root):
-        if root is not None:
+    def is_Binary_Tree_satisfied(self, root: Node) -> bool:
+        if root:
             is_balanced = self.is_helper(root, root.val)
 
             if is_balanced is None:
@@ -19,13 +19,13 @@ class Solution:
 
     def is_helper(self, node, data):
         if node.left:
-            if data < node.left.val:
-                return self.is_helper(node.left, node.left.data)
+            if data > node.left.val:
+                return self.is_helper(node.left, node.left.val)
             else:
                 return False
         if node.right:
-            if data > node.right.val:
-                return self.is_helper(node.right, node.right.data)
+            if data < node.right.val:
+                return self.is_helper(node.right, node.right.val)
             else:
                 return False
 
