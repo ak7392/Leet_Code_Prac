@@ -4,7 +4,8 @@ def combinationSum(candidates, target):
 
 def combination_helper(candidates, sublist, index, target):
     if target == 0:
-        return sublist
+        print(sublist)
+        return
     if target < 0:
         return
     for i in range(index, len(candidates)):
@@ -13,6 +14,6 @@ def combination_helper(candidates, sublist, index, target):
         sublist.remove(candidates[i])
 
 
-arr = [10, 1, 2, 7, 6, 1, 5]
-target = 7
-print(combinationSum(arr, target))
+arr = [2, 3, 6, 7]
+target = 8
+combinationSum(arr, target)
