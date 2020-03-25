@@ -1,32 +1,34 @@
+	# _ _ 4
+	# \  / \
+	#   5   8
+	#  /\  / \
+	# 7  9 12  15
+
+adj_list = {4: [5,8], 5: [4,7,9], 8: [12,15], 9: [], 7: [], 12: [], 15: []}
 
 
 
-def dfs_stack_recusrion(graph, current_Node=None, explored_nodes={}):
-	if graph:
-		if not current_Node:
-			current_Node = next(iter(graph))
+stack = []
+visited = []
 
-		# print(current_Node)
+def dfs_detect_cycle(start):
 
-		explored_nodes[current_Node] = 0
-		for next_node in graph[current_Node]:
-			if next_node not in explored_nodes: 
-				explored_nodes = dfs_stack_recusrion(graph, next_node, explored_nodes)
-			elif(explored_nodes[next_node] == 0):
-				print("Cycle_detected")
+	stack.append(start)
 
-		explored_nodes[current_Node] = 1
-		return (explored_nodes)
+	while len(stack) > 0: 
+		cur = stack.pop()
+		for neighbour in adj_list[cur]:
+			if not neighbour in visited: 
+				stack.append(neighbour)
+		
+		
+		visited.append(cur)
 
-g  = {
-	0: [2,3],
-	2: [4,5,6,2],
-	3: [],
-	4: [],
-	5: [],
-	6: []
-}
+	return len(set(visited)) < len(visited)
 
-print(dfs_stack_recusrion(g))
+
+print(dfs_detect_cycle(4))
+print(visited)
+
 
 
