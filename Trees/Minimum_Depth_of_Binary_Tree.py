@@ -11,6 +11,10 @@ class TreeNode:
         self.left = None
         self.right = None
 
+# Check Post order traversal
+# Lowest Common Ancestor
+# Construct binary tree using postorder and inorder
+
 
 class Solution:
 
@@ -40,4 +44,3 @@ root.left.right = TreeNode(5)
 
 a = Solution()
 print(a.minDepth(root))
-
