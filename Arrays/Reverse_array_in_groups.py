@@ -1,21 +1,24 @@
-def reverse_array_groups(arr, n):
-    low = 0
-    high = len(arr)-1
-    stack = []
-    new_stack = []
+def reverse_array_groups(arr, n, k):
 
-    while low < high:
+    i = 0
 
-        stack.append(arr[low])
-        low += 1
+    while i < n:
+        left = i
 
-        if low == n-1:
-            for i in stack:
-                new_stack.append(stack.pop(i))
-
-    print(new_stack)
+        right = min(i + k - 1, n - 1)
+        while left < right:
+            arr[left], arr[right] = arr[right], arr[left]
+            left += 1
+            right-+1
+        i += k
 
 
-arr = [10, 20, 30, 40, 50, 60]
-n = 3
-reverse_array_groups(arr, n)
+arr = [1, 2, 3, 4, 5, 6,
+       7, 8]
+
+k = 3
+n = len(arr)
+reverse_array_groups(arr, n, k)
+
+for i in range(0, n):
+    print(arr[i], end=" ")
